@@ -1,7 +1,27 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const firebaseConfig = {
+// ... (your existing Firebase imports and config)
+
+const adminContent = document.getElementById('adminContent');
+const loginOverlay = document.getElementById('loginOverlay');
+const passInput = document.getElementById('passInput');
+const loginBtn = document.getElementById('loginBtn');
+
+loginBtn.onclick = () => {
+    // Set your VBS password here
+    if (passInput.value === "VBS2026Rocks") { 
+        loginOverlay.style.display = 'none';
+        adminContent.style.display = 'block';
+        getRegistrations(); // Only fetch data after successful login
+    } else {
+        document.getElementById('err').textContent = "Incorrect Password";
+    }
+};
+
+async function getRegistrations() {
+    // ... (rest of your existing getRegistrations function)
+	const firebaseConfig = {
     // PASTE YOUR REAL CONFIG FROM APP.JS HERE
     apiKey: "AIzaSyB9wvQ525wCsxZmIZmfzj6Z5VjF2aSUu_g",
     authDomain: "registervbs-83306.firebaseapp.com",
@@ -46,3 +66,15 @@ async function getRegistrations() {
 }
 
 getRegistrations();
+}
+
+
+
+
+
+
+
+
+
+
+

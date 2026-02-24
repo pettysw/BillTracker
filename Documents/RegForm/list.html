@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VBS Registration List</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
-    <div class="container">
+    <div id="loginOverlay" class="container" style="text-align: center;">
+        <h2>🔐 Admin Access</h2>
+        <input type="password" id="passInput" placeholder="Enter Password">
+        <button id="loginBtn">Unlock List</button>
+        <p id="err" style="color: red;"></p>
+    </div>
+
+    <div id="adminContent" class="container" style="display: none;">
         <h2>📋 Registered Explorers</h2>
         <div id="loading">Loading registrations...</div>
-        <ul id="explorerList" style="list-style: none; padding: 0;">
-            </ul>
+        <ul id="explorerList"></ul>
         <br>
         <a href="index.html">Back to Registration</a>
     </div>
 
     <script type="module" src="list.js"></script>
 </body>
-</html>
